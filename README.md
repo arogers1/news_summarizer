@@ -2,6 +2,10 @@
 
 A Python application that scrapes news articles from Ground News using authenticated login and summarizes them using an LLM (Large Language Model) to help you keep up with the news efficiently.
 
+## 🚀 Quick Start
+
+New to the project? Check out our [**Quick Start Guide**](QUICKSTART.md) for step-by-step instructions!
+
 ## Features
 
 - 🔐 **Authenticated Scraping**: Logs into Ground News with your credentials
@@ -140,22 +144,31 @@ news_summarizer/
 
 ## Troubleshooting
 
-### Login Issues
+**📖 For comprehensive troubleshooting, see our [Troubleshooting Guide](TROUBLESHOOTING.md)**
+
+### Quick Fixes
+
+#### Login Issues
 - Verify your Ground News credentials are correct
 - Check if Ground News has changed their login page structure
 - Try running with `HEADLESS_BROWSER=false` to see browser interactions
 
-### Scraping Issues
+#### Scraping Issues
 - Ground News may have updated their HTML structure
 - Check the logs for specific error messages
 - Ensure you have a stable internet connection
 
-### API Issues
+#### Scraping Issues
+- Ground News may have updated their HTML structure
+- Check the logs for specific error messages
+- Ensure you have a stable internet connection
+
+#### API Issues
 - Verify your OpenAI API key is valid
 - Check your OpenAI API usage limits
 - Ensure you have sufficient credits
 
-### Browser Issues
+#### Browser Issues
 - Make sure Chrome/Chromium is installed
 - The webdriver-manager will auto-download chromedriver
 - On Linux, you may need to install: `apt-get install chromium-browser`
@@ -178,6 +191,13 @@ Create a task that runs `python run.py` on your desired schedule.
 - Never commit your `.env` file to version control
 - Keep your API keys and passwords secure
 - The `.env` file is included in `.gitignore`
+
+## Important Notes
+
+- **Ground News Structure**: The scraper uses CSS selectors to find articles on the Ground News website. If Ground News changes their website structure, the scraper may need updates.
+- **Rate Limiting**: Be mindful of Ground News's terms of service and avoid excessive scraping that could overload their servers.
+- **OpenAI Costs**: Each article summary uses OpenAI API credits. Monitor your usage to avoid unexpected costs.
+- **Two-Factor Authentication**: Currently not supported. If your Ground News account requires 2FA, the login will fail.
 
 ## Future Enhancements
 
